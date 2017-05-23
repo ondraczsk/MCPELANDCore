@@ -17,78 +17,7 @@ class MysqlConnection{
 	private $mysqli;
 	private $nextChampionship;
 	public function __construct(LegionPE $main){
-		// hiding away sensitive data
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		$mysqli = new \mysqli("127.0.0.1", "root", "", "legionpe", 3306);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		// hiding away sensitive data
+	       $mysqli = new \mysqli("127.0.0.1", "root", "", "legionpe", 3306);
 		if($mysqli->connect_error){
 			die("Cannot connect to MySQL server: {$mysqli->connect_error}");
 		}
