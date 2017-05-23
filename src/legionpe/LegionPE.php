@@ -394,7 +394,7 @@ class LegionPE extends PluginBase implements ChannelSubscriber{
 	 * @return string
 	 */
 	public function getID(){
-		return "Legion PE";
+		return "MCPE.LAND";
 	}
 	/**
 	 * Send to the subscriber a message
@@ -417,7 +417,7 @@ class LegionPE extends PluginBase implements ChannelSubscriber{
 		return $this;
 	}
 	public function formatChat($msg, $isACTION = false){
-		return $isACTION ? "* LegionPE $msg":"[LegionPE] $msg";
+		return $isACTION ? "* MCPE.LAND $msg":"[MCPE.LAND] $msg";
 	}
 	public function isDeafTo(ChannelSubscriber $subscriber){
 		return $this->deaf;
@@ -464,7 +464,7 @@ class LegionPE extends PluginBase implements ChannelSubscriber{
 		TimingsHandler::printTimings($ft);
 		fwrite($ft, "Sample time " . round($sampleTime * 1000000000) . " (" . $sampleTime . "s)" . PHP_EOL);
 		fseek($ft, 0);
-		$data = ["syntax" => "text", "poster" => "LegionPE", "content" => stream_get_contents($ft)];
+		$data = ["syntax" => "text", "poster" => "MCPE.LAND", "content" => stream_get_contents($ft)];
 		$ch = curl_init("http://paste.ubuntu.com/");
 		curl_setopt($ch, CURLOPT_POST, 1);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -475,7 +475,7 @@ class LegionPE extends PluginBase implements ChannelSubscriber{
 		curl_setopt($ch, CURLOPT_AUTOREFERER, false);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 		curl_setopt($ch, CURLOPT_HEADER, true);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, ["User-Agent: LegionPE " . $this->getDescription()->getVersion()]);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, ["User-Agent: MCPE.LAND " . $this->getDescription()->getVersion()]);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		$data = curl_exec($ch);
 		curl_close($ch);
